@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8"/>
+    <link rel="" href="" />
+    <style>
+        #history{
+            background-color:beige;
+        }
+        #memo{
+            width:150px;
+            height:20px;
+        }
+        #btn{
+            height:35px;
+            width:50px;
+        }
+        #clear{
+            width:23px;
+            height:23px;
+            text-align: center;
+            margin-top: 10px;
+            border:1px solid gray;
+            background-color: beige;
+        }
+        #his{
+            float:left;
+            margin:15px;
+            border:1px solid gray;
+            background-color: gray;
+        }
+    </style>
+</head>
+<body>
+    <input id="memo" placeholder="请输入搜索的商品"/>
+    <input type="button" value="搜索" id="btn" onclick="saveStorage('memo')"/>
+    <p>最近搜索</p>
+    <p id="history"></p>
+    <input type="button" value="X" id="clear" onclick="clearStorage()"/>
+</body>
+<script type="text/javascript">
+    function saveStorage(id){
+        var data = document.getElementById(id).value;
+        var time = new Date().getTime();
+        localStorage.setItem(time, data);
+        loadStorage('history');
+    }
+    function loadStorage(id) {
+        var result="<div>";
+        for (var i = 0; i < localStorage.length; i++) {
+            var key = localStorage.key(i);
+            var value = localStorage.getItem(key);
+            result += '<p id="his">'+value+'</p>';
+        }
+        result+="</div>"
+        var history = document.getElementById(id);
+        history.innerHTML = result;
+    }
+    function clearStorage() {
+        localStorage.clear();
+        alert("确认要删除吗？");
+        loadStorage('history');
+    }
+
+</script>
+</html>
