@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>刮刮卡</title>
+    <style>
+    
+        #canvas{
+            border:1px solid blue;
+            left:10px;
+            top:10px;
+            position:absolute;
+            background:url(img/234.jpg) no-repeat center center;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="canvas" width="500"  height="200" ></canvas>
+</body>
+<script>
+    var canvas = document.getElementById("canvas");
+    var ctx = canvas.getContext("2d");
+    
+    //灰色加遮罩层
+    ctx.fillStyle="gray";
+    ctx.fillRect(0,0,canvas.width,canvas.height);
+    ctx.fill();
+    ctx.globalCompositeOperation = 'destination-out';
+    var clear=false;
+
+    canvas.onmousedown=function(ev){
+        clear=true;
+    }
+          
+    canvas.onmouseup=function(){            
+        clear=false;      
+    }
+    canvas.onmousemove=function(ev){
+        if(clear){
+            ctx.beginPath(); 
+            ctx.arc(ev.pageX - canvas.offsetLeft,ev.pageY - canvas.offsetTop,25,0,Math.PI * 2);  
+            ctx.fill(); 
+            ctx.closePath();
+            judging(); 
+        }
+
+    }
+
+    function judging(){
+        var imgData = ctx.getImageData(0,0,canvas.width,canvas.height);
+        var data=imgData.data;
+        var num=0;
+        for(var i=0; i<data.length; i+=4){
+            if(data[i]<10)
+                num++;
+        }
+        var p=num/(data.length/4);
+        if(p>0.85){
+            ctx.clearRect(0,0,canvas.width,canvas.height);
+        }
+    }
+</script>
+</html>
