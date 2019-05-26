@@ -14,11 +14,11 @@
         }
         img{
             float:left;
+            transform: scale(1,1);
             opacity: 1;
             border-top:3px solid rgb(240, 236, 236);
             border-left:3px solid rgb(240, 236, 236);
             border-right:3px solid rgb(240, 236, 236);
-            /* background-color:black; */
         }
         #time{
             background-color:orange;
@@ -57,6 +57,7 @@
         .explanation{
             width:400px;
             background-color: #fff;
+            /* z-index:2; */
             border-left:3px solid rgb(240, 236, 236);
             border-right:3px solid rgb(240, 236, 236);
             border-bottom:3px solid rgb(240, 236, 236);
@@ -80,24 +81,34 @@
         .explanation:hover #exp{
             display:block;
         }
-        .explanation:hover .container{
-            background:rgba(240,236,236,0.6);
-        }
         .explanation:hover{
            transform: translateY(-150px);
         }
-        .container{
-            height:100%;
-            width:100%;
-            position:absolute;
-            background:rgba(240,236,236,0);
+        .all{
+            overflow: hidden;
         }
+        .all:hover img{
+            transform: scale(2,2);
+        }
+        #container{
+            position: absolute;
+            background: gray;
+            opacity: 0.7;
+            width: 400px;
+            height: 270px;
+            transform: scale(0,0);
+        }
+        .all:hover #container{
+            transform: scale(1,1);
+        }
+        
     </style>
 </head>
 <body>
+<div class="all">
     <div id="main">
-        <div class="container"></div>
         <img src="zhanqiao.jpg" alt="" width="400" height="300"/>
+        <div id="container"></div>
         <div id="time">
             <span>15</span>
             <br/>
@@ -111,6 +122,6 @@
         <div id="exp">青岛栈桥是青岛海滨风景区的景点之一,是国务院于1982年首批公布的国家级风景名胜区。青岛栈桥位于游人如织的青岛中山路南端，桥身从海岸探入如弯月般的青岛湾深处。桥身供游人参观并在此停靠旅游船，由此乘船可看海上青岛。</div>
         <p class="review">10分钟前&nbsp;&nbsp;&nbsp;123评论</p>
     </div>
+</div>
 </body>
-
 </html>
