@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #main{
+            width:400px;
+            height:300px;
+            position:relative;
+            overflow: hidden;
+        }
+        img{
+            float:left;
+            opacity: 1;
+            border-top:3px solid rgb(240, 236, 236);
+            border-left:3px solid rgb(240, 236, 236);
+            border-right:3px solid rgb(240, 236, 236);
+            /* background-color:black; */
+        }
+        #time{
+            background-color:orange;
+            width:70px;
+            height:70px;
+            text-align: center;
+            border-radius:35px;
+            float:left;
+            position:fixed;
+            margin-left:320px;
+            margin-top:15px;
+            line-height: 35px;
+           
+        }
+        #time span{
+            font-size:15px;
+            color:#fff;
+            font-weight:bold;
+        }
+        .pic{
+            width:50px;
+            height:30px;
+            font-size:15px;
+            text-align:center;
+            color:#fff;
+            font-weight:normal;
+            background-color:orange;
+            margin-top:-27px;
+            position:absolute;
+        }
+        .AAAA{
+            color:orange;
+            font-size: 1.17em;
+            font-weight: bold;
+        }
+        .explanation{
+            width:400px;
+            background-color: #fff;
+            border-left:3px solid rgb(240, 236, 236);
+            border-right:3px solid rgb(240, 236, 236);
+            border-bottom:3px solid rgb(240, 236, 236);
+        }
+        #exp{
+            font-size:20px;
+            color:rgb(129, 128, 128);
+            display:none;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .review{
+            font-size:10px;
+            color:gray;
+            margin-top:50px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .zhanqiao{
+            font-size:30px;
+            font-weight:bolder;
+        }
+        .explanation:hover #exp{
+            display:block;
+        }
+        .explanation:hover .container{
+            background:rgba(240,236,236,0.6);
+        }
+        .explanation:hover{
+           transform: translateY(-150px);
+        }
+        .container{
+            height:100%;
+            width:100%;
+            position:absolute;
+            background:rgba(240,236,236,0);
+        }
+    </style>
+</head>
+<body>
+    <div id="main">
+        <div class="container"></div>
+        <img src="zhanqiao.jpg" alt="" width="400" height="300"/>
+        <div id="time">
+            <span>15</span>
+            <br/>
+            <span>五月</span>
+        </div>
+    </div>
+    <div class="explanation">
+        <div class="pic">照片</div>
+        <div class="zhanqiao">青岛栈桥</div> 
+        <div class="AAAA">国家AAAA级景区</div>
+        <div id="exp">青岛栈桥是青岛海滨风景区的景点之一,是国务院于1982年首批公布的国家级风景名胜区。青岛栈桥位于游人如织的青岛中山路南端，桥身从海岸探入如弯月般的青岛湾深处。桥身供游人参观并在此停靠旅游船，由此乘船可看海上青岛。</div>
+        <p class="review">10分钟前&nbsp;&nbsp;&nbsp;123评论</p>
+    </div>
+</body>
+
+</html>
