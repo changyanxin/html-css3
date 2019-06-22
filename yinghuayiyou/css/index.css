@@ -144,12 +144,15 @@ a{
         background-color:rgb(231, 228, 228);
     }
     .out-left{
-        background-image:none;
+        /* background-image:none; */
         float:left;
         width:80%;
         /* height:200px; */
         line-height: 200px;
         padding-left:30px;
+    }
+    .out-left .sbanner2{
+        display:none;
     }
     .out-left img{
         float:left;
@@ -412,11 +415,16 @@ a{
     }
     /*机场*/
     .out-left{
-        background-image:url(../img/Sbanner2.jpg);
+        /* background-image:url(../img/Sbanner2.jpg); */
         background-repeat: no-repeat;
         height:365px;
         width:80%;
         float:left;
+    }
+    .out-left .sbanner2{
+        width:100%;
+        height:100%;
+        display:block;
     }
     .out-left div{
         color:whitesmoke;
