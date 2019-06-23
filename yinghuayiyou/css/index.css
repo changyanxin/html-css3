@@ -436,6 +436,11 @@ a{
     .out-left img{
         display:none;
     }
+    .out-left span{
+        position:relative;
+        left:10%;
+        top:-30%;
+    }
     .out-right{
         float:left;
         width:20%;
